@@ -11,7 +11,7 @@
       <table id="employee_list">
          <tbody>
             <tr>
-               <th>社員番組</th>
+               <th>社員番号</th>
                <th>氏名</th>
                <th>操作</th>
             </tr>
@@ -25,7 +25,7 @@
                      （削除済み）
                   </c:when>
                  <c:otherwise>
-                   <a href="<c:url value='/employees/show?id=${employee.id}' />">詳細を表示</a><a href="<c:url value='/employees/show?id=${employee.id}' />">詳細を表示</a>
+                   <a href="<c:url value='/employees/show?id=${employee.id}' />">詳細を表示</a>
                  </c:otherwise>
                </c:choose>
              </td>
@@ -35,7 +35,7 @@
       </table>
 
       <div id="pagination">
-          （全${employees_cout} 件）<br />
+          （全 ${employees_count} 件）<br />
           <c:forEach var="i" begin="1" end="${((employees_count - 1)/ 15) + 1 }" step="1">
              <c:choose>
                 <c:when test="${1 == page}">
